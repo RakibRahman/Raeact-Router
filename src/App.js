@@ -15,10 +15,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="vault" element={<Vault />} />
           <Route path="tips" element={<Tips />} />
+
+          {/*   Nested Routes */}
           <Route path="info/*" element={<Info />}>
             <Route path="seller" element={<Seller />} />
             <Route path="buyer" element={<Buyer />} />
           </Route>
+
+          {/* No Match Found */}
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          ></Route>
         </Routes>
       </Router>
     </div>
