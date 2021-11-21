@@ -5,16 +5,27 @@ import { Info } from "./Info";
 import { Home } from "./Home";
 import { Seller } from "./Seller";
 import { Buyer } from "./Buyer";
+import { Data } from "./Data/Data";
+import { Invoice } from "./Data/Invoice";
+import { Invoices } from "./Data/Invoices";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div>
       <Router>
+        {/* Persistent Route/Component */}
         <Nav />
+
+        {/* Navigation Route */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="vault" element={<Vault />} />
           <Route path="tips" element={<Tips />} />
+
+          {/* URL param */}
+          <Route path="invoices" element={<Invoices />}>
+            <Route path=":invoiceId" element={<Invoice />} />
+          </Route>
 
           {/*   Nested Routes */}
           <Route path="info/*" element={<Info />}>
@@ -27,10 +38,11 @@ function App() {
             path="*"
             element={
               <main style={{ padding: "1rem" }}>
+                <h1 style={{ fontSize: "4rem" }}>404 Error</h1>
                 <p>There's nothing here!</p>
               </main>
             }
-          ></Route>
+          />
         </Routes>
       </Router>
     </div>
