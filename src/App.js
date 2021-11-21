@@ -5,9 +5,10 @@ import { Info } from "./Info";
 import { Home } from "./Home";
 import { Seller } from "./Seller";
 import { Buyer } from "./Buyer";
-import { Data } from "./Data/Data";
+import { Search } from "./Search/Search";
 import { Invoice } from "./Data/Invoice";
 import { Invoices } from "./Data/Invoices";
+import { Error } from "./Error";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -42,16 +43,9 @@ function App() {
             <Route path="buyer" element={<Buyer />} />
           </Route>
 
+          <Route path="search" element={<Search />} />
           {/* No Match Found */}
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <h1 style={{ fontSize: "4rem" }}>404 Error</h1>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </div>

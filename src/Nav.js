@@ -8,6 +8,8 @@ export const Nav = () => {
       <Link to="/tips">Tips</Link>
       <Link to="/info">Info</Link>
       <Link to="/invoices">Data</Link>
+      <Link to="/search">Search</Link>
+      <Link to="/404">404 Error</Link>
     </div>
   );
 };

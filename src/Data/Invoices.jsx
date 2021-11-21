@@ -1,8 +1,24 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { getInvoices } from "./data";
 
 export function Invoices() {
   let invoices = getInvoices();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const onChangeHandler = (event) => {
+    let filter = event.target.value;
+    if (filter) setSearchParams({ filter });
+    if (!filter) setSearchParams({});
+  };
+  const filterInvoice = (arr) => {
+    return arr.filter((invoice) => {
+      let filter = searchParams.get("filter");
+      if (!filter) return true;
+
+      let name = invoice.name.toLowerCase();
+      return name.startsWith(filter.toLowerCase());
+    });
+  };
   return (
     <div style={{ display: "flex" }}>
       <nav
@@ -11,7 +27,12 @@ export function Invoices() {
           padding: "1rem",
         }}
       >
-        {invoices.map((invoice) => (
+        <input
+          type="text"
+          value={searchParams.get("filter") || ""}
+          onChange={onChangeHandler}
+        />
+        {filterInvoice(invoices).map((invoice) => (
           <NavLink
             // className="red"
             // className={({ isActive }) => (isActive ? "red" : "blue")}

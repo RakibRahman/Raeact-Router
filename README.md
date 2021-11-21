@@ -18,10 +18,11 @@
 - Index routes render when the user hasn't clicked one of the items in a navigation list yet.
 - Demo in `App.js`
 
-### ActiveLink
+### NavLink
 
 - To see which link is active/clicked on a navigation list.
-- Replace `Link` with `ActiveLink`
+- NavLink component which is helpful in the event that we want to apply some special styles.
+- Replace `Link` with `NavLink`
 - Demo in `Invoices.jsx`
 
 ### No Match Found
@@ -30,3 +31,13 @@
 - Demo in `App.js`
 
 ### Search Params
+
+- `useSearchParams()` hook is used to read and write the URL query string.
+- Demo in `Invoices.jsx`
+
+### useNavigate
+
+- Navigate pragmatically with `useNavigate()` hook.
+- Go to the previous or next pages.
+- Redirect to specific URL
+- Demo in `Errors.jsx`

@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { getInvoice } from "./data";
+import { useParams, useNavigate } from "react-router-dom";
+import { getInvoice, deleteInvoice } from "./data";
 export const Invoice = () => {
   let params = useParams();
+  let navigate = useNavigate();
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
   return (
     <div>
@@ -10,6 +11,14 @@ export const Invoice = () => {
       <p>User Name: {invoice.name} </p>
       <p>Amount: {invoice.amount} </p>
       <p>Due Date: {invoice.due} </p>
+      <button
+        onClick={() => {
+          deleteInvoice(invoice.number);
+          navigate("/invoices"); //return to index after deleting an invoice
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };
