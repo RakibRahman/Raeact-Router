@@ -7,8 +7,7 @@ export function Invoices() {
 
   const onChangeHandler = (event) => {
     let filter = event.target.value;
-    if (filter) setSearchParams({ filter });
-    if (!filter) setSearchParams({});
+    filter ? setSearchParams({ filter }) : setSearchParams({});
   };
   const filterInvoice = (arr) => {
     return arr.filter((invoice) => {

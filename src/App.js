@@ -5,11 +5,16 @@ import { Info } from "./Info";
 import { Home } from "./Home";
 import { Seller } from "./Seller";
 import { Buyer } from "./Buyer";
-import { Search } from "./Search/Search";
+import { User } from "./User";
 import { Invoice } from "./Data/Invoice";
 import { Invoices } from "./Data/Invoices";
 import { Error } from "./Error";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 function App() {
   return (
     <div>
@@ -43,9 +48,10 @@ function App() {
             <Route path="buyer" element={<Buyer />} />
           </Route>
 
-          <Route path="search" element={<Search />} />
+          <Route path="user" element={<User />} />
           {/* No Match Found */}
-          <Route path="*" element={<Error />} />
+          {/* <Route path="*" element={<Error />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </div>

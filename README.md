@@ -23,11 +23,12 @@
 - To see which link is active/clicked on a navigation list.
 - NavLink component which is helpful in the event that we want to apply some special styles.
 - Replace `Link` with `NavLink`
-- Demo in `Invoices.jsx`
+- Demo in `Nav.jsx`
 
 ### No Match Found
 
 - If there is no matched route/component we use `path="*"` in `<Route/>` to show error information.
+- `<Navigate to='/'/>` will automatically redirect to the specific page if no route is matched.
 - Demo in `App.js`
 
 ### Search Params

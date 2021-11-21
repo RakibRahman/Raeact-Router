@@ -1,15 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const Nav = () => {
   return (
     <div className="nav">
-      <Link to="/">Home</Link>
-      <Link to="/vault">Vault</Link>
-      <Link to="/tips">Tips</Link>
-      <Link to="/info">Info</Link>
-      <Link to="/invoices">Data</Link>
-      <Link to="/search">Search</Link>
-      <Link to="/404">404 Error</Link>
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+        // activeLink is a css class name
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/vault"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        Vault
+      </NavLink>
+      <NavLink
+        to="/tips"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        Tips
+      </NavLink>
+      <NavLink
+        to="/info"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        Info
+      </NavLink>
+      <NavLink
+        to="/invoices"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        Data
+      </NavLink>
+      <NavLink
+        to="/user"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        User
+      </NavLink>
+      <NavLink
+        to="/404"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        404 Error
+      </NavLink>
     </div>
   );
 };
