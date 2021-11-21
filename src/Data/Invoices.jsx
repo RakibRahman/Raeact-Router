@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { getInvoices } from "../blog";
+import { getInvoices } from "./data";
 
 export function Invoices() {
   let invoices = getInvoices();

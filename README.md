@@ -6,6 +6,12 @@
 - `<Outlet>` swaps between the two child routes
 - Demo in `App.js && Info.js`
 
+### useParams
+
+- `useParams` Hook returns an object with a mapping between the URL parameter and its value.
+- We can use `useParams` to create dynamic routes based on the “placeholder” portion of the URL.
+- Demo in `App.js && Invoices.js && Invoice.js`
+
 ### Index Routes
 
 - Index routes are the default child route for a parent route.
@@ -20,5 +26,7 @@
 
 ### No Match Found
 
-- If there is no matched route/component we use `path="*"` in `<Route/>` to show error.
+- If there is no matched route/component we use `path="*"` in `<Route/>` to show error information.
 - Demo in `App.js`
+
+### Search Params
