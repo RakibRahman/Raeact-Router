@@ -22,8 +22,17 @@ function App() {
           <Route path="vault" element={<Vault />} />
           <Route path="tips" element={<Tips />} />
 
-          {/* URL param */}
+          {/* URL param || Side By Side*/}
           <Route path="invoices" element={<Invoices />}>
+            {/* Index Routes */}
+            <Route
+              index
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>Select an invoice</p>
+                </main>
+              }
+            />
             <Route path=":invoiceId" element={<Invoice />} />
           </Route>
 

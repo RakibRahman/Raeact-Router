@@ -7,9 +7,9 @@ export const Invoice = () => {
   return (
     <div>
       <h1>Details of {params.invoiceId} </h1>
-      <p>Details of {invoice.name} </p>
-      <p>Details of {invoice.amount} </p>
-      <p>Details of {invoice.due} </p>
+      <p>User Name: {invoice.name} </p>
+      <p>Amount: {invoice.amount} </p>
+      <p>Due Date: {invoice.due} </p>
     </div>
   );
 };
