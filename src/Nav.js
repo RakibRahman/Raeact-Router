@@ -36,10 +36,10 @@ export const Nav = () => {
         Data
       </NavLink>
       <NavLink
-        to="/user"
+        to="/blog"
         className={({ isActive }) => (isActive ? "activeLink" : "blue")}
       >
-        User
+        Blog
       </NavLink>
       <NavLink
         to="/404"

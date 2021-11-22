@@ -5,7 +5,9 @@ import { Info } from "./Info";
 import { Home } from "./Home";
 import { Seller } from "./Seller";
 import { Buyer } from "./Buyer";
-import { User } from "./User";
+import { Article } from "./Blog/Article";
+import { ArticleIndex } from "./Blog/ArticleIndex";
+import { Blog } from "./Blog/Blog";
 import { Invoice } from "./Data/Invoice";
 import { Invoices } from "./Data/Invoices";
 import { Error } from "./Error";
@@ -43,15 +45,20 @@ function App() {
           </Route>
 
           {/*   Nested Routes */}
-          <Route path="info/*" element={<Info />}>
+          <Route path="info/" element={<Info />}>
+            <Route index element={<h1>Select any List</h1>} />
             <Route path="seller" element={<Seller />} />
             <Route path="buyer" element={<Buyer />} />
           </Route>
 
-          <Route path="user" element={<User />} />
+          <Route path="blog" element={<Blog />}>
+            <Route path="blog/" element={<ArticleIndex />} />
+            <Route path=":id" element={<Article />} />
+          </Route>
+
           {/* No Match Found */}
-          {/* <Route path="*" element={<Error />} /> */}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Error />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </Router>
     </div>

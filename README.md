@@ -4,13 +4,13 @@
 
 - Nest siblings route inside a parent route
 - `<Outlet>` swaps between the two child routes
-- Demo in `App.js && Info.js`
+- Demo in `App.js && Info.js && Blog`
 
 ### useParams
 
 - `useParams` Hook returns an object with a mapping between the URL parameter and its value.
 - We can use `useParams` to create dynamic routes based on the “placeholder” portion of the URL.
-- Demo in `App.js && Invoices.js && Invoice.js`
+- Demo in `App.js && Data && Blog`
 
 ### Index Routes
 
