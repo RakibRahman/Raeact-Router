@@ -42,6 +42,12 @@ export const Nav = () => {
         Blog
       </NavLink>
       <NavLink
+        to="/admin"
+        className={({ isActive }) => (isActive ? "activeLink" : "blue")}
+      >
+        Admin
+      </NavLink>
+      <NavLink
         to="/404"
         className={({ isActive }) => (isActive ? "activeLink" : "blue")}
       >

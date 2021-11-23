@@ -10,7 +10,7 @@
 
 - `useParams` Hook returns an object with a mapping between the URL parameter and its value.
 - We can use `useParams` to create dynamic routes based on the “placeholder” portion of the URL.
-- Demo in `App.js && Data && Blog`
+- Demo in `App.js && Data && Blog(deep nesting)`
 
 ### Index Routes
 
@@ -42,3 +42,13 @@
 - Go to the previous or next pages.
 - Redirect to specific URL
 - Demo in `Errors.jsx`
+
+### useLocation
+
+- useLocation hooks provides an object containing `state`,'pathname`,`search`
+- It returns your current URL. If the URL is changed, the useLocation will be updated as well.
+- Useful when you want to trigger a function based on a change of the URL.
+
+### ProtectedRoute
+
+- Example in `Admin`

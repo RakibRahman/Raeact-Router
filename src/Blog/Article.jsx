@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 export const Article = () => {
   const [post, setPost] = useState([]);
+
   let { id } = useParams();
   let navigate = useNavigate();
+
   const URL = `https://jsonplaceholder.typicode.com/posts/${id}`;
+
   useEffect(() => {
-    const fetchPost = async () => {
+    (async () => {
       try {
         const response = await fetch(URL);
         const data = await response.json();
         setPost(data);
-      } catch {
-        console.log("something went wrong!");
+      } catch (e) {
+        console.warn(e);
+        navigate("/");
       }
-    };
-    fetchPost();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    })();
+  }, [URL, navigate]);
 
   return (
     <div>

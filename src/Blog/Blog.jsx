@@ -10,6 +10,7 @@ export const Blog = () => {
         <Route path="/" element={<ArticleIndex />} />
         <Route path=":id" element={<Article />} />
       </Routes>
+      {/* we use <outlet/> if we dont want to use above pattern  */}
     </div>
   );
 };
